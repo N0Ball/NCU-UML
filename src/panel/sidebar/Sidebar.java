@@ -1,4 +1,4 @@
-package src.panel;
+package src.panel.sidebar;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,13 +8,13 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
-import src.panel.button.AssociationLine;
-import src.panel.button.BaseButton;
-import src.panel.button.Classes;
-import src.panel.button.CompositionLine;
-import src.panel.button.GenerationLine;
-import src.panel.button.Select;
-import src.panel.button.UseCase;
+import src.panel.sidebar.button.AssociationLine;
+import src.panel.sidebar.button.BaseButton;
+import src.panel.sidebar.button.Classes;
+import src.panel.sidebar.button.CompositionLine;
+import src.panel.sidebar.button.GenerationLine;
+import src.panel.sidebar.button.Select;
+import src.panel.sidebar.button.UseCase;
 
 public class Sidebar extends JPanel
 {

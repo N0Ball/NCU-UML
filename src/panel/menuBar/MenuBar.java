@@ -1,4 +1,4 @@
-package src.panel;
+package src.panel.menuBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 
-import src.panel.menu.Edit;
-import src.panel.menu.File;
+import src.panel.menuBar.menu.Edit;
+import src.panel.menuBar.menu.File;
 
 public class MenuBar extends JMenuBar{
     

@@ -1,4 +1,4 @@
-package src.panel;
+package src.panel.canvas;
 
 import javax.swing.JPanel;
 

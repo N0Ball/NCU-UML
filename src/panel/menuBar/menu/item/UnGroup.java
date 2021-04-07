@@ -1,13 +1,13 @@
-package src.panel.menu.item;
+package src.panel.menuBar.menu.item;
 
 import javax.swing.JMenuItem;
 
-public class Rename extends JMenuItem
+public class UnGroup extends JMenuItem
 {
 
-    public Rename()
+    public UnGroup()
     {
-        super("Rename");
+        super("UnGroup");
         this.addActionListener(e -> {
             throw new UnsupportedOperationException("Not implemented Yet");
         });

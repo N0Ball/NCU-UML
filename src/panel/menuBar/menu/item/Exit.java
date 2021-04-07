@@ -1,13 +1,13 @@
-package src.panel.menu.item;
+package src.panel.menuBar.menu.item;
 
 import javax.swing.JMenuItem;
 
-public class Group extends JMenuItem
+public class Exit extends JMenuItem
 {
 
-    public Group()
+    public Exit()
     {
-        super("Group");
+        super("Exit");
         this.addActionListener(e -> {
             throw new UnsupportedOperationException("Not implemented Yet");
         });

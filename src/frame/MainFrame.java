@@ -4,9 +4,9 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import src.panel.Canvas;
-import src.panel.MenuBar;
-import src.panel.Sidebar;
+import src.panel.canvas.Canvas;
+import src.panel.menuBar.MenuBar;
+import src.panel.sidebar.Sidebar;
 
 public class MainFrame extends JFrame
 {

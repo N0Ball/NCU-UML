@@ -1,4 +1,4 @@
-package src.panel.menu;
+package src.panel.menuBar.menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import src.panel.menu.item.Group;
-import src.panel.menu.item.Rename;
-import src.panel.menu.item.UnGroup;
+import src.panel.menuBar.menu.item.Group;
+import src.panel.menuBar.menu.item.Rename;
+import src.panel.menuBar.menu.item.UnGroup;
 
 public class Edit extends JMenu
 {

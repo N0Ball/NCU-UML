@@ -1,14 +1,16 @@
-package src.panel.menu.item;
+package src.panel.menuBar.menu.item;
 
 import javax.swing.JMenuItem;
 
-public class Save extends JMenuItem
+public class Rename extends JMenuItem
 {
-    public Save()
+
+    public Rename()
     {
-        super("Save");
+        super("Rename");
         this.addActionListener(e -> {
             throw new UnsupportedOperationException("Not implemented Yet");
         });
     }
+    
 }

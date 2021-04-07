@@ -1,16 +1,14 @@
-package src.panel.menu.item;
+package src.panel.menuBar.menu.item;
 
 import javax.swing.JMenuItem;
 
-public class UnGroup extends JMenuItem
+public class Save extends JMenuItem
 {
-
-    public UnGroup()
+    public Save()
     {
-        super("UnGroup");
+        super("Save");
         this.addActionListener(e -> {
             throw new UnsupportedOperationException("Not implemented Yet");
         });
     }
-    
 }

@@ -1,4 +1,4 @@
-package src.panel.menu;
+package src.panel.menuBar.menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import src.panel.menu.item.Exit;
-import src.panel.menu.item.Load;
-import src.panel.menu.item.Save;
+import src.panel.menuBar.menu.item.Exit;
+import src.panel.menuBar.menu.item.Load;
+import src.panel.menuBar.menu.item.Save;
 
 public class File extends JMenu
 {
