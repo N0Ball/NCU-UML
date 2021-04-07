@@ -42,8 +42,7 @@ public abstract class BaseButton
 
     protected void pressAction()
     {
-        ObjectManager.objectManager.UpdateSidebar(this);
-        System.out.println("Button Pressed: " + name);
+        ObjectManager.objectManager.updateSidebar(this);
     }
     
     protected Color color;

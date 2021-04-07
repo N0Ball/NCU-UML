@@ -32,8 +32,6 @@ public class Sidebar extends JPanel
         buttons.add(new Classes());
         buttons.add(new UseCase());
 
-        buttons.get(0).select();
-
         for (BaseButton button: buttons)
         {
             this.add(button.getButton());

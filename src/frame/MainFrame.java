@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 import src.panel.canvas.Canvas;
+import src.panel.canvas.components.ObjectComponent;
 import src.panel.menuBar.MenuBar;
 import src.panel.sidebar.Sidebar;
 

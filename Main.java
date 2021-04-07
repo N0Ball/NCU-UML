@@ -1,8 +1,8 @@
-import src.frame.MainFrame;
+import src.ObjectManager;
 
 public class Main{
     public static void main(String[] args) 
     {
-        new MainFrame();
+        new ObjectManager("Test");
     }
 }
