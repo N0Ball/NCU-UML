@@ -1,23 +1,3 @@
-# NCU-UML
-A UML project for NCU's OO class
-
-## Basic Layouts
-```java
-JMenuBar menuBar = new JMenuBar();
-```
-
-## A.1
-
-```java
-public class UserInput extends JFrame implements MouseListener
-{
-    something.addMouseListener(this);
-}
-```
-
-## B.1
-
-```java
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
@@ -75,12 +55,3 @@ public class DragPanel extends JPanel
         }
     }
 }
-```
-
-
-## F.1
-
-### 3.a
-```java
-JOptionPane.showInputDialog("What is your name?", "Default");
-```
