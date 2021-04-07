@@ -15,4 +15,5 @@ public class Classes extends ObjectComponent
         this.setIcon(paintBrush);
         selected = false;
     }
+    
 }

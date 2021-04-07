@@ -13,6 +13,6 @@ public class UseCase extends ObjectComponent
         Image scaledImage = new ImageIcon("img/use_case.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
         paintBrush = new ImageIcon(scaledImage);
         this.setIcon(paintBrush);
-        selected = true;
+        selected = false;
     }
 }

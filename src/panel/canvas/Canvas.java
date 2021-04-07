@@ -4,23 +4,23 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 import src.ObjectManager;
 import src.panel.canvas.components.BaseComponent;
 import src.panel.canvas.components.ObjectComponent;
 import src.panel.canvas.components.Basic.Port;
 
-public class Canvas extends JPanel{
+public class Canvas extends JLayeredPane{
 
     public Canvas()
     {
 
         ports = new ArrayList<>();
+        mode = "";
 
         this.addMouseListener(new ClickListener());
         this.setBackground(Color.LIGHT_GRAY);
@@ -32,6 +32,11 @@ public class Canvas extends JPanel{
     public void update()
     {
 
+        for (Port port: ports)
+        {
+            this.remove(port);
+        }
+
         ports.clear();
 
         for (BaseComponent objComp: objCompts)
@@ -40,7 +45,7 @@ public class Canvas extends JPanel{
             {
 
                 Port topPort = new Port();
-                topPort.setPosition(objComp.getLocation());
+                topPort.setPosition(objComp.getPosition());
                 ports.add(topPort);
                 
             }
@@ -48,28 +53,47 @@ public class Canvas extends JPanel{
 
         for (Port port: ports)
         {
-            this.add(port);
+            this.add(port, new Integer(80));
         }
 
         this.paintImmediately(0, 0, 2000, 2000);
 
-        for (Port port: ports)
+    }
+
+    public List<ObjectComponent> getObjComponents() { return objCompts; }
+
+    public void setCurtComponent(ObjectComponent obj) { curtComponent = obj; }
+    public void setSelectMode()
+    {
+        for (ObjectComponent objCompt: objCompts)
         {
-            this.remove(port);
+            objCompt.addMouseListener(objCompt.clickListener);
+        }
+    }
+    public void deselectMode()
+    {
+        for (ObjectComponent objCompt: objCompts)
+        {
+            objCompt.removeMouseListener(objCompt.clickListener);
         }
     }
 
-    public List<BaseComponent> getObjComponents() { return objCompts; }
-
-    public void setCurtComponent(BaseComponent obj) { curtComponent = obj; }
-
     private void clickAction(Point location)
     {
-        ObjectManager.objectManager.updateCanvas(this);
-        curtComponent.setPosition(location);
-        objCompts.add(curtComponent);
-        this.add(curtComponent);
-        update();
+
+        mode = ObjectManager.objectManager.updateCanvas(this);
+        
+        if (mode == "Object")
+        {
+            curtComponent.setPosition(location);
+            objCompts.add(curtComponent);
+            this.add(curtComponent, new Integer(100));
+            update();
+        }else if(mode == "Basic")
+        {
+            update();
+        }
+
     }
 
     private class ClickListener extends MouseAdapter
@@ -80,15 +104,9 @@ public class Canvas extends JPanel{
         }
     }
 
-    private class DragListener extends MouseMotionAdapter
-    {
-        public void mouseDragged(MouseEvent e)
-        {
-        }
-    }
-
-    private BaseComponent curtComponent;
-    private List<BaseComponent> objCompts;
+    private ObjectComponent curtComponent;
+    private List<ObjectComponent> objCompts;
     private List<Port> ports;
+    private String mode;
 
 }

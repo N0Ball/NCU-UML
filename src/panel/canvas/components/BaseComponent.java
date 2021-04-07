@@ -13,7 +13,7 @@ public class BaseComponent extends JLabel
         this.setSize(100, 100);
         this.setLocation(150, 150);
         this.setBackground(new Color(0, 0, 0, 0));
-        this.setOpaque(true);
+        this.setOpaque(false);
         this.setHorizontalAlignment(SwingConstants.CENTER);
         this.setVerticalAlignment(SwingConstants.CENTER);
         setPosition(new Point(100, 100));
