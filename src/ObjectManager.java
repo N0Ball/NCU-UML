@@ -3,7 +3,7 @@ package src;
 import java.util.List;
 
 import src.frame.MainFrame;
-import src.panel.sidebar.button.BaseButton;
+import src.panel.sidebar.BaseButton;
 
 public class ObjectManager {
 

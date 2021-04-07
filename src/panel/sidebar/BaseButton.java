@@ -1,4 +1,4 @@
-package src.panel.sidebar.button;
+package src.panel.sidebar;
 
 import java.awt.Color;
 import java.awt.Image;

@@ -9,7 +9,6 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import src.panel.sidebar.button.AssociationLine;
-import src.panel.sidebar.button.BaseButton;
 import src.panel.sidebar.button.Classes;
 import src.panel.sidebar.button.CompositionLine;
 import src.panel.sidebar.button.GenerationLine;
