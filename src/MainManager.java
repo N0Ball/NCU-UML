@@ -18,6 +18,14 @@ import src.components.UMLObjects.UseCaseObject;
 public class MainManager 
 {
 
+    private static String mode;
+    private static String prevMode;
+    public static Canvas canvas;
+    public static List<UMLObject> umlObjs;
+    public static List<LineObject> lines;
+    public static Select select = new Select();
+    public static LineObject line;
+
     public MainManager(Canvas c)
     {
         umlObjs = new ArrayList<>();
@@ -27,9 +35,6 @@ public class MainManager
     }
 
     public static String getMode() { return mode; }
-
-    public static Select select = new Select();
-    public static LineObject line;
 
     public List<BaseComponent> getObject()
     {
@@ -73,7 +78,7 @@ public class MainManager
 
         if (mode != prevMode)
         {
-            if (prevMode == "Select")
+            if (prevMode.equals("Select"))
             {
 
                 System.out.println("REMOVE SELECT");
@@ -134,9 +139,12 @@ public class MainManager
                     }
                     canvas.setMode("Line");
                     break;
+                default:
+                    System.out.println("No such mode");
+                    break;
             }
 
-            if (mode == "Group")
+            if (mode.equals("Group"))
             {
                 setMode("Select");
             }
@@ -147,7 +155,7 @@ public class MainManager
     }
     
     public static void selectMenu(String name) {
-        if (name == "Group")
+        if (name.equals("Group"))
         {
             System.out.println("Pressed Item: " + name);
 
@@ -172,7 +180,7 @@ public class MainManager
             {
                 System.out.println("Not enough to group");
             }
-        }else if (name == "UnGroup")
+        }else if (name.equals("UnGroup"))
         {
             int countSelected = 0;
             UMLObject target = null;
@@ -198,7 +206,7 @@ public class MainManager
                 System.out.println("Not valid");
             }
 
-        }else if (name == "Rename")
+        }else if (name.equals("Rename"))
         {
             List<UMLObject> canidates = new ArrayList<>();
 
@@ -223,16 +231,10 @@ public class MainManager
                     canvas.update(new Point(0, 0));
                 }
             }
-        }else if (name == "Exit")
+        }else if (name.equals("Exit"))
         {
             System.exit(0);
         }
     }
-
-    private static String mode;
-    private static String prevMode;
-    public static Canvas canvas;
-    public static List<UMLObject> umlObjs;
-    public static List<LineObject> lines;
 
 }
