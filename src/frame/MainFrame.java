@@ -1,36 +1,47 @@
 package src.frame;
 
+import java.awt.Color;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
-import src.panel.canvas.Canvas;
-import src.panel.canvas.components.ObjectComponent;
-import src.panel.menuBar.MenuBar;
-import src.panel.sidebar.Sidebar;
+import src.MainManager;
+import src.canvas.Canvas;
+import src.components.BaseComponent;
+import src.menuBar.MenuBar;
+import src.sidebar.Sidebar;
 
 public class MainFrame extends JFrame
 {
 
-    public MenuBar menuBar;
-    public Canvas canvas;
-    public Sidebar sidebar;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    public static Canvas canvas = new Canvas();
+    public static MainManager mainManager = new MainManager(canvas); 
 
     public MainFrame()
     {
-
-        menuBar = new MenuBar();
-        canvas = new Canvas();
-        sidebar = new Sidebar();
-
+        this.setBackground(Color.WHITE);
         this.setTitle("OO UML");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1000, 600);
-
-        this.add(sidebar, BorderLayout.WEST);
+        this.setUndecorated(true);
+        
         this.add(canvas, BorderLayout.CENTER);
-        this.setJMenuBar(menuBar);
+        this.add(new Sidebar(), BorderLayout.WEST);
+        this.setJMenuBar(new MenuBar());
         this.setVisible(true);
+    }
 
+    public void addCanvas(BaseComponent obj)
+    {
+        canvas.add(obj);
+    }
+
+    public void removeCanvas(BaseComponent obj)
+    {
+        canvas.remove(obj);
     }
 }

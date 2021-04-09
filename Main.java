@@ -1,8 +1,13 @@
-import src.ObjectManager;
+import src.frame.MainFrame;
 
-public class Main{
-    public static void main(String[] args) 
+public class Main
+{
+    public Main()
     {
-        new ObjectManager("Test");
+        new MainFrame();
+    }
+
+    public static void main(String[] args) {
+        new Main();
     }
 }
