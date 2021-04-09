@@ -1,86 +1,36 @@
-# NCU-UML
-A UML project for NCU's OO class
+# OO UML Editor
 
-## Basic Layouts
-```java
-JMenuBar menuBar = new JMenuBar();
-```
+![Java](https://img.shields.io/badge/with-Java-red?logo=Java)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/73adb956f8b5421d9e7df552d560cb29)](https://www.codacy.com/gh/N0Ball/NCU-UML/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=N0Ball/NCU-UML&amp;utm_campaign=Badge_Grade)
 
-## A.1
+## Screenshots
 
-```java
-public class UserInput extends JFrame implements MouseListener
-{
-    something.addMouseListener(this);
-}
-```
+![screenshot-1.PNG](resource/screenshot-1.png)
 
-## B.1
+## About
 
-```java
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+This is the term project of the course **Object-Oriented Analysis and Design** (2021, National Central University).
 
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+## Feature
 
-public class DragPanel extends JPanel 
-{
+This is a simple UML editor with:
 
-    ImageIcon image = new ImageIcon("img/smile.png");
-    final int WIDTH = image.getIconWidth();
-    final int HEIGHT = image.getIconHeight();
-    Point imageCorner;
-    Point prevPt;
+- Objects
+  - Class
+  - Use Case
 
-    DragPanel()
-    {
-        imageCorner = new Point(0, 0);
-        ClickListener clickListener = new ClickListener();
-        DragListener dragListener = new DragListener();
+- Relation Lines
+  - Association Line
+  - Generation Line
+  - Composition Line
 
-        this.addMouseListener(clickListener);
-        this.addMouseMotionListener(dragListener);
-    }
+- Behavior
+  - Create a new object
+  - Rename an object
+  - Drag an object
+  - Connect between objects
+  - Replace the connections between objects
+  - Group objects
+  - UnGroup objects
 
-    public void paintComponent(Graphics g)
-    {
-        super.paintComponent(g);
-        image.paintIcon(this, g, (int)imageCorner.getX(), (int)imageCorner.getY());
-    }
-
-    private class ClickListener extends MouseAdapter
-    {
-        public void mousePressed(MouseEvent e)
-        {
-            prevPt = e.getPoint();
-        }
-    }
-
-    private class DragListener extends MouseMotionAdapter
-    {
-        public void mouseDragged(MouseEvent e)
-        {
-            Point currentPt = e.getPoint();
-
-            imageCorner.translate(
-                (int)(currentPt.getX() - prevPt.getX()), 
-                (int)(currentPt.getY() - prevPt.getY())
-            );
-            prevPt = currentPt;
-            repaint();
-        }
-    }
-}
-```
-
-
-## F.1
-
-### 3.a
-```java
-JOptionPane.showInputDialog("What is your name?", "Default");
-```
+For detailed spec, [see this file](resource/uml-spec.pdf).
